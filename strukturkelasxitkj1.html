@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struktur & Jadwal Piket XI TKJ 1</title>
+    <style>
+        /* --- RESET & BASIC STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fe;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #1a237e;
+            margin-bottom: 20px;
+        }
+
+        .header-title {
+            margin-bottom: 40px;
+        }
+
+        section {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #e0e0e0;
+            margin: 40px 0;
+        }
+
+        /* --- STRUKTUR ORGANISASI --- */
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #3f51b5;
+        }
+
+        .role {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            color: #5c6bc0;
+            margin-bottom: 5px;
+        }
+
+        .name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        /* --- JADWAL PIKET --- */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .day-column {
+            background: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        .day-header {
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        /* Warna Header Hari */
+        .senin { background-color: #2e7d32; }
+        .selasa { background-color: #f57c00; }
+        .rabu { background-color: #fbc02d; color: #333; }
+        .kamis { background-color: #fbc02d; color: #333; }
+        .jumat { background-color: #1b5e20; }
+
+        .member-list {
+            list-style: none;
+            padding: 15px;
+        }
+
+        .member-list li {
+            padding: 8px 0;
+            border-bottom: 1px border-dash #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        .member-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header-title">
+            <h1>Siswa & Pengurus Kelas XI TKJ 1</h1>
+        </div>
+
+        <section>
+            <h2>Struktur Organisasi Kelas</h2>
+            <div class="structure-grid">
+                
+                <div class="card">
+                    <img src="https://via.placeholder.com/100" alt="Foto Wali Kelas" class="profile-img">
+                    <div class="role">Wali Kelas</div>
+                    <div class="name">Nama Wali Kelas</div>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/100" alt="Foto Ketua Kelas" class="profile-img">
+                    <div class="role">Ketua Kelas</div>
+                    <div class="name">Nama Ketua Kelas</div>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/100" alt="Foto Wakil Ketua" class="profile-img">
+                    <div class="role">Wakil Ketua</div>
+                    <div class="name">Nama Wakil Ketua</div>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/100" alt="Foto Sekretaris" class="profile-img">
+                    <div class="role">Sekretaris</div>
+                    <div class="name">Nama Sekretaris</div>
+                </div>
+
+                <div class="card">
+                    <img src="https://via.placeholder.com/100" alt="Foto Bendahara" class="profile-img">
+                    <div class="role">Bendahara</div>
+                    <div class="name">Nama Bendahara</div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>Jadwal Piket Kelas</h2>
+            <div class="schedule-grid">
+                
+                <div class="day-column">
+                    <div class="day-header senin">Senin (7)</div>
+                    <ul class="member-list">
+                        <li>MUHAMMAD RIDHLO MAULANA AKBAR</li>
+                        <li>M.DEVAN ABDIKA BANGSA</li>
+                        <li>Fabrianz Torino Putranzah</li>
+                        <li>ahmad zidan alfadly</li>
+                        <li>Ascha Bryan Firdaus</li>
+                        <li>Ahmad Khubaisy Muhsinin</li>
+                        <li>Juan dzakwan hisyam</li>
+                    </ul>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header selasa">Selasa (7)</div>
+                    <ul class="member-list">
+                        <li>Silva Talitha Dzakira</li>
+                        <li>FIZZA FAHRIAN DWIDAMA</li>
+                        <li>Muhammad Farid Byantara Kusuma</li>
+                        <li>Khahlil Azzam Mudji Maulinda</li>
+                        <li>Nico Putra Pramana</li>
+                        <li>MUHAMMAD AKBAR BRILIAN</li>
+                        <li>Ahmad Sony Fahreza</li>
+                    </ul>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header rabu">Rabu (7)</div>
+                    <ul class="member-list">
+                        <li>Naura Yuwan Ramandhita</li>
+                        <li>Nadine Anindya Alfian Putri</li>
+                        <li>Amelia Fransiska Dyah C</li>
+                        <li>Reyghen Ethan Bradly Simanjuntak</li>
+                        <li>Theodorius Adi Fatlolon</li>
+                        <li>Calya Aqila Al Mouzavie</li>
+                        <li>Muhammad yafiq nadim rafif</li>
+                    </ul>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header kamis">Kamis (7)</div>
+                    <ul class="member-list">
+                        <li>Ayyub</li>
+                        <li>Ajeng Ayu Siswati</li>
+                        <li>Dhaniel Wahyu Bahtiar</li>
+                        <li>KEN KANZAN MAKHFIYAN</li>
+                        <li>BASKORO GADANG WIDHYODONO</li>
+                        <li>Raditya Satrio Abimanyu</li>
+                        <li>FARI ITHA AS. SABRIN</li>
+                    </ul>
+                </div>
+
+                <div class="day-column">
+                    <div class="day-header jumat">Jumat (6)</div>
+                    <ul class="member-list">
+                        <li>Zidni Nuro M</li>
+                        <li>dwi affandy</li>
+                        <li>Lintang albrian anwar</li>
+                        <li>Zanuar Eka Prasetya</li>
+                        <li>Queensha Aurellia</li>
+                        <li>JHON TERRY EKA RAMADHANI</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
