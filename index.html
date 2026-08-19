@@ -3,238 +3,654 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Struktur Kelas XII</title>
-
+    <title>Website Resmi Kelas</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Segoe UI',sans-serif;
+        :root {
+            --primary: #4F46E5;
+            --primary-gradient: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+            --secondary: #06B6D4;
+            --accent: #F59E0B;
+            --bg-dark: #0F172A;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-main: #F8FAFC;
+            --text-sub: #94A3B8;
         }
 
-        body{
-            background:linear-gradient(135deg,#0f172a,#1e293b);
-            color:white;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
 
-        .hero{
-            text-align:center;
-            padding:50px 20px;
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
         }
 
-        .hero h1{
-            font-size:3rem;
-            margin-bottom:10px;
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            z-index: 1000;
         }
 
-        .hero p{
-            opacity:.8;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #818CF8, #38BDF8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        section{
-            padding:40px 8%;
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
         }
 
-        .title{
-            text-align:center;
-            font-size:2rem;
-            margin-bottom:30px;
+        .nav-links a {
+            color: var(--text-sub);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
         }
 
-        .card{
-            background:rgba(255,255,255,0.08);
-            border-radius:20px;
-            padding:20px;
-            backdrop-filter:blur(10px);
-            box-shadow:0 0 20px rgba(0,0,0,.3);
+        .nav-links a:hover {
+            color: #38BDF8;
         }
 
-        .wali{
-            width:250px;
-            margin:auto;
-            text-align:center;
+        /* Hero Header */
+        header {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 40px;
+            position: relative;
         }
 
-        .wali img{
-            width:150px;
-            height:150px;
-            border-radius:50%;
-            object-fit:cover;
-            border:4px solid gold;
+        .badge {
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            color: #818CF8;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
-        .row{
-            display:flex;
-            justify-content:center;
-            gap:25px;
-            flex-wrap:wrap;
-            margin-top:30px;
+        header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            background: linear-gradient(180deg, #FFFFFF 0%, #94A3B8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .member{
-            width:220px;
-            text-align:center;
+        header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            max-width: 600px;
         }
 
-        .member img{
-            width:120px;
-            height:120px;
-            border-radius:50%;
-            object-fit:cover;
-            margin-bottom:10px;
-            border:3px solid white;
+        /* Section Layout */
+        section {
+            padding: 80px 8%;
         }
 
-        .gallery{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:20px;
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        .gallery img{
-            width:100%;
-            height:220px;
-            object-fit:cover;
-            border-radius:15px;
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            display: inline-block;
+            position: relative;
         }
 
-        table{
-            width:100%;
-            border-collapse:collapse;
-            background:white;
-            color:black;
-            border-radius:15px;
-            overflow:hidden;
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
         }
 
-        th,td{
-            padding:15px;
-            text-align:center;
+        .section-title p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
         }
 
-        th{
-            background:#2563eb;
-            color:white;
+        /* Modern Grid Cards - Structure */
+        .structure-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
         }
 
-        tr:nth-child(even){
-            background:#f3f4f6;
+        .walikelas-container {
+            width: 100%;
+            max-width: 320px;
         }
 
-        footer{
-            text-align:center;
-            padding:25px;
-            opacity:.7;
+        .sub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+
+        .member-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 30px -10px rgba(79, 70, 229, 0.3);
+        }
+
+        .member-card:hover::before {
+            opacity: 1;
+        }
+
+        .img-wrapper {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            padding: 4px;
+            background: var(--primary-gradient);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #1e293b;
+        }
+
+        .role-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #38BDF8;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .member-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #F8FAFC;
+            margin-bottom: 4px;
+        }
+
+        .member-detail {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        /* Piket Section */
+        .piket-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .piket-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .piket-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .piket-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .day-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #38BDF8;
+        }
+
+        .count-badge {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38BDF8;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .piket-list {
+            list-style: none;
+        }
+
+        .piket-list li {
+            font-size: 0.88rem;
+            color: #CBD5E1;
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.04);
+        }
+
+        .piket-list li:last-child {
+            border-bottom: none;
+        }
+
+        .piket-list li i {
+            font-size: 0.6rem;
+            color: #6366F1;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 220px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 70%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.05rem;
+            color: #FFF;
+            margin-bottom: 4px;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-sub);
+            font-size: 0.88rem;
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            section {
+                padding: 60px 5%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>KELAS XII IPA 1</h1>
-        <p>Bersama, Berprestasi, dan Solid</p>
-    </div>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i> CLASS DASHBOARD
+        </div>
+        <ul class="nav-links">
+            <li><a href="#struktur"><i class="fa-solid fa-users"></i> Struktur</a></li>
+            <li><a href="#piket"><i class="fa-solid fa-calendar-days"></i> Jadwal Piket</a></li>
+            <li><a href="#kegiatan"><i class="fa-solid fa-camera"></i> Galeri Kegiatan</a></li>
+        </ul>
+    </nav>
 
-    <!-- STRUKTUR KELAS -->
-    <section>
-        <h2 class="title">Struktur Kelas</h2>
+    <!-- Header / Hero -->
+    <header>
+        <div class="badge">Official Class Website</div>
+        <h1>Struktur & Kegiatan Kelas</h1>
+        <p>Portal informasi resmi organisasi kelas, jadwal piket kebersihan harian, dan dokumentasi momen kebersamaan.</p>
+    </header>
 
-        <div class="card wali">
-            <img src="walikelas.jpg" alt="">
-            <h3>Wali Kelas</h3>
-            <p>Nama Wali Kelas</p>
+    <!-- Section Struktur Organisasi -->
+    <section id="struktur">
+        <div class="section-title">
+            <h2>Struktur Organisasi</h2>
+            <p>Pengurus dan penanggung jawab kelas</p>
         </div>
 
-        <div class="row">
-
-            <div class="card member">
-                <img src="ketua.jpg" alt="">
-                <h3>Ketua Kelas</h3>
-                <p>Nama Ketua</p>
+        <div class="structure-grid">
+            <!-- Wali Kelas -->
+            <div class="walikelas-container">
+                <div class="member-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80" alt="Wali Kelas">
+                    </div>
+                    <span class="role-badge" style="background: rgba(245, 158, 11, 0.15); color: #F59E0B;">Wali Kelas</span>
+                    <div class="member-name">Ibu Nurtami, S.Pd.</div>
+                    <div class="member-detail">Pembimbing Kelas</div>
+                </div>
             </div>
 
-            <div class="card member">
-                <img src="bendahara1.jpg" alt="">
-                <h3>Bendahara 1</h3>
-                <p>Nama Bendahara</p>
+            <!-- Ketua & Wakil Ketua Kelas -->
+            <div class="sub-grid" style="max-width: 680px;">
+                <div class="member-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&auto=format&fit=crop&q=80" alt="Ketua Kelas">
+                    </div>
+                    <span class="role-badge">Ketua Kelas</span>
+                    <div class="member-name">Muhammad Ridhlo</div>
+                    <div class="member-detail">Pemimpin & Koordinator</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80" alt="Wakil Ketua Kelas">
+                    </div>
+                    <span class="role-badge">Wakil Ketua</span>
+                    <div class="member-name">Silva Talitha</div>
+                    <div class="member-detail">Pendamping Ketua</div>
+                </div>
             </div>
 
-            <div class="card member">
-                <img src="bendahara2.jpg" alt="">
-                <h3>Bendahara 2</h3>
-                <p>Nama Bendahara</p>
-            </div>
+            <!-- Sekretaris 1 & 2 -->
+            <div class="sub-grid">
+                <div class="member-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&auto=format&fit=crop&q=80" alt="Sekretaris 1">
+                    </div>
+                    <span class="role-badge" style="color: #10B981;">Sekretaris 1</span>
+                    <div class="member-name">Naura Yuwan</div>
+                    <div class="member-detail">Administrasi & Notulensi</div>
+                </div>
 
-            <div class="card member">
-                <img src="sekre1.jpg" alt="">
-                <h3>Sekretaris 1</h3>
-                <p>Nama Sekretaris</p>
-            </div>
+                <div class="member-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&auto=format&fit=crop&q=80" alt="Sekretaris 2">
+                    </div>
+                    <span class="role-badge" style="color: #10B981;">Sekretaris 2</span>
+                    <div class="member-name">Nadine Anindya</div>
+                    <div class="member-detail">Dokumentasi & Surat</div>
+                </div>
 
-            <div class="card member">
-                <img src="sekre2.jpg" alt="">
-                <h3>Sekretaris 2</h3>
-                <p>Nama Sekretaris</p>
-            </div>
+                <!-- Bendahara 1 & 2 -->
+                <div class="member-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80" alt="Bendahara 1">
+                    </div>
+                    <span class="role-badge" style="color: #EC4899;">Bendahara 1</span>
+                    <div class="member-name">Amelia Fransiska</div>
+                    <div class="member-detail">Keuangan & Kas Kelas</div>
+                </div>
 
+                <div class="member-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&auto=format&fit=crop&q=80" alt="Bendahara 2">
+                    </div>
+                    <span class="role-badge" style="color: #EC4899;">Bendahara 2</span>
+                    <div class="member-name">Ajeng Ayu Siswati</div>
+                    <div class="member-detail">Pencatatan Keuangan</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FOTO KEGIATAN -->
-    <section>
-        <h2 class="title">Galeri Kegiatan Kelas</h2>
+    <!-- Section Jadwal Piket Kebersihan -->
+    <section id="piket">
+        <div class="section-title">
+            <h2>Jadwal Piket Kelas</h2>
+            <p>Petugas kebersihan harian kelas</p>
+        </div>
 
-        <div class="gallery">
-            <img src="kegiatan1.jpg" alt="">
-            <img src="kegiatan2.jpg" alt="">
-            <img src="kegiatan3.jpg" alt="">
-            <img src="kegiatan4.jpg" alt="">
-            <img src="kegiatan5.jpg" alt="">
-            <img src="kegiatan6.jpg" alt="">
+        <div class="piket-grid">
+            <!-- Senin -->
+            <div class="piket-card">
+                <div class="piket-header">
+                    <span class="day-title"><i class="fa-regular fa-calendar-check"></i> Senin</span>
+                    <span class="count-badge">7 Anggota</span>
+                </div>
+                <ul class="piket-list">
+                    <li><i class="fa-solid fa-circle"></i> MUHAMMAD RIDHLO</li>
+                    <li><i class="fa-solid fa-circle"></i> MAULANA AKBAR</li>
+                    <li><i class="fa-solid fa-circle"></i> M.DEVAN ABDIKA BANGSA</li>
+                    <li><i class="fa-solid fa-circle"></i> Fabrianz Torino Putranzah</li>
+                    <li><i class="fa-solid fa-circle"></i> Ahmad Zidan Alfadly</li>
+                    <li><i class="fa-solid fa-circle"></i> Ascha Bryan Firdaus</li>
+                    <li><i class="fa-solid fa-circle"></i> Ahmad Khubaisy Muhsinin</li>
+                    <li><i class="fa-solid fa-circle"></i> Juan Dzakwan Hisyam</li>
+                </ul>
+            </div>
+
+            <!-- Selasa -->
+            <div class="piket-card">
+                <div class="piket-header">
+                    <span class="day-title"><i class="fa-regular fa-calendar-check"></i> Selasa</span>
+                    <span class="count-badge">7 Anggota</span>
+                </div>
+                <ul class="piket-list">
+                    <li><i class="fa-solid fa-circle"></i> Silva Talitha Dzakira</li>
+                    <li><i class="fa-solid fa-circle"></i> FIZZA FAHRIAN DWIDAMA</li>
+                    <li><i class="fa-solid fa-circle"></i> M. Farid Byantara Kusuma</li>
+                    <li><i class="fa-solid fa-circle"></i> Khahlil Azzam Mudji M.</li>
+                    <li><i class="fa-solid fa-circle"></i> Nico Putra Pramana</li>
+                    <li><i class="fa-solid fa-circle"></i> MUHAMMAD AKBAR BRILIAN</li>
+                    <li><i class="fa-solid fa-circle"></i> Ahmad Sony Fahreza</li>
+                </ul>
+            </div>
+
+            <!-- Rabu -->
+            <div class="piket-card">
+                <div class="piket-header">
+                    <span class="day-title"><i class="fa-regular fa-calendar-check"></i> Rabu</span>
+                    <span class="count-badge">7 Anggota</span>
+                </div>
+                <ul class="piket-list">
+                    <li><i class="fa-solid fa-circle"></i> Naura Yuwan Ramandhita</li>
+                    <li><i class="fa-solid fa-circle"></i> Nadine Anindya Alfian P.</li>
+                    <li><i class="fa-solid fa-circle"></i> Amelia Fransiska Dyah C.</li>
+                    <li><i class="fa-solid fa-circle"></i> Reyghen Ethan Bradly S.</li>
+                    <li><i class="fa-solid fa-circle"></i> Theodorius Adi Fatlolon</li>
+                    <li><i class="fa-solid fa-circle"></i> Calya Aqila Al Mouzavie</li>
+                    <li><i class="fa-solid fa-circle"></i> M. Yafiq Nadim Rafif</li>
+                </ul>
+            </div>
+
+            <!-- Kamis -->
+            <div class="piket-card">
+                <div class="piket-header">
+                    <span class="day-title"><i class="fa-regular fa-calendar-check"></i> Kamis</span>
+                    <span class="count-badge">7 Anggota</span>
+                </div>
+                <ul class="piket-list">
+                    <li><i class="fa-solid fa-circle"></i> Ayyub</li>
+                    <li><i class="fa-solid fa-circle"></i> Ajeng Ayu Siswati</li>
+                    <li><i class="fa-solid fa-circle"></i> Dhaniel Wahyu Bahtiar</li>
+                    <li><i class="fa-solid fa-circle"></i> KEN KANZAN MAKHFIYAN</li>
+                    <li><i class="fa-solid fa-circle"></i> BASKORO GADANG W.</li>
+                    <li><i class="fa-solid fa-circle"></i> Raditya Satrio Abimanyu</li>
+                    <li><i class="fa-solid fa-circle"></i> FARILTHA AS. SABRIN</li>
+                </ul>
+            </div>
+
+            <!-- Jumat -->
+            <div class="piket-card">
+                <div class="piket-header">
+                    <span class="day-title"><i class="fa-regular fa-calendar-check"></i> Jumat</span>
+                    <span class="count-badge">6 Anggota</span>
+                </div>
+                <ul class="piket-list">
+                    <li><i class="fa-solid fa-circle"></i> Zidni Nuro M</li>
+                    <li><i class="fa-solid fa-circle"></i> Dwi Affandy</li>
+                    <li><i class="fa-solid fa-circle"></i> Lintang Albrian Anwar</li>
+                    <li><i class="fa-solid fa-circle"></i> Zanuar Eka Prasetya</li>
+                    <li><i class="fa-solid fa-circle"></i> Queensha Aurellia</li>
+                    <li><i class="fa-solid fa-circle"></i> JHON TERRY EKA R.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- JADWAL PIKET -->
-    <section>
-        <h2 class="title">Jadwal Piket Kelas</h2>
+    <!-- Section Foto Kegiatan -->
+    <section id="kegiatan">
+        <div class="section-title">
+            <h2>Galeri Kegiatan Kelas</h2>
+            <p>Momen dan kebersamaan dalam berbagai aktivitas</p>
+        </div>
 
-        <table>
-            <tr>
-                <th>Hari</th>
-                <th>Anggota</th>
-            </tr>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop&q=80" alt="Belajar Bersama">
+                <div class="gallery-overlay">
+                    <h4>Diskusi Kelompok</h4>
+                    <p>Kegiatan belajar dan kerja kelompok di kelas</p>
+                </div>
+            </div>
 
-            <tr>
-                <td>Senin</td>
-                <td>Nama 1, Nama 2, Nama 3</td>
-            </tr>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&auto=format&fit=crop&q=80" alt="Kebersamaan Classmate">
+                <div class="gallery-overlay">
+                    <h4>Momen Kebersamaan</h4>
+                    <p>Foto bersama seusai acara peringatan hari besar</p>
+                </div>
+            </div>
 
-            <tr>
-                <td>Selasa</td>
-                <td>Nama 4, Nama 5, Nama 6</td>
-            </tr>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&auto=format&fit=crop&q=80" alt="Kegiatan Praktikum">
+                <div class="gallery-overlay">
+                    <h4>Gotong Royong & Piket</h4>
+                    <p>Menjaga kebersihan dan kerapihan ruang kelas</p>
+                </div>
+            </div>
 
-            <tr>
-                <td>Rabu</td>
-                <td>Nama 7, Nama 8, Nama 9</td>
-            </tr>
-
-            <tr>
-                <td>Kamis</td>
-                <td>Nama 10, Nama 11, Nama 12</td>
-            </tr>
-
-            <tr>
-                <td>Jumat</td>
-                <td>Nama 13, Nama 14, Nama 15</td>
-            </tr>
-        </table>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80" alt="Presentasi Kelas">
+                <div class="gallery-overlay">
+                    <h4>Presentasi Proyek</h4>
+                    <p>Penyampaian hasil karya kelompok di depan kelas</p>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        © 2026 - Website Resmi Kelas XII IPA 1
+        <p>&copy; 2026 Website Resmi Organisasi & Kebersihan Kelas. All Rights Reserved.</p>
     </footer>
 
 </body>
 </html>
+index.html
+Displaying index.html.
