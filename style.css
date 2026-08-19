@@ -1,0 +1,33 @@
+.piket-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.piket-card{
+    background:rgba(255,255,255,0.08);
+    border-radius:20px;
+    padding:20px;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.1);
+    transition:.3s;
+}
+
+.piket-card:hover{
+    transform:translateY(-5px);
+}
+
+.piket-card h3{
+    color:#60a5fa;
+    margin-bottom:10px;
+    text-align:center;
+}
+
+.piket-card ul{
+    list-style:none;
+}
+
+.piket-card li{
+    padding:8px 0;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
