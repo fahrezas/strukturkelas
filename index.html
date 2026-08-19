@@ -3,109 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Struktur Organisasi Kelas</title>
+    <title>Struktur Kelas XII</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            background:linear-gradient(135deg,#0f172a,#1e293b);
+            color:white;
+        }
+
+        .hero{
+            text-align:center;
+            padding:50px 20px;
+        }
+
+        .hero h1{
+            font-size:3rem;
+            margin-bottom:10px;
+        }
+
+        .hero p{
+            opacity:.8;
+        }
+
+        section{
+            padding:40px 8%;
+        }
+
+        .title{
+            text-align:center;
+            font-size:2rem;
+            margin-bottom:30px;
+        }
+
+        .card{
+            background:rgba(255,255,255,0.08);
+            border-radius:20px;
+            padding:20px;
+            backdrop-filter:blur(10px);
+            box-shadow:0 0 20px rgba(0,0,0,.3);
+        }
+
+        .wali{
+            width:250px;
+            margin:auto;
+            text-align:center;
+        }
+
+        .wali img{
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            object-fit:cover;
+            border:4px solid gold;
+        }
+
+        .row{
+            display:flex;
+            justify-content:center;
+            gap:25px;
+            flex-wrap:wrap;
+            margin-top:30px;
+        }
+
+        .member{
+            width:220px;
+            text-align:center;
+        }
+
+        .member img{
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            object-fit:cover;
+            margin-bottom:10px;
+            border:3px solid white;
+        }
+
+        .gallery{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .gallery img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+            border-radius:15px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+            color:black;
+            border-radius:15px;
+            overflow:hidden;
+        }
+
+        th,td{
+            padding:15px;
+            text-align:center;
+        }
+
+        th{
+            background:#2563eb;
+            color:white;
+        }
+
+        tr:nth-child(even){
+            background:#f3f4f6;
+        }
+
+        footer{
+            text-align:center;
+            padding:25px;
+            opacity:.7;
+        }
+    </style>
 </head>
 <body>
 
-    <h1 align="center">STRUKTUR ORGANISASI KELAS</h1>
+    <div class="hero">
+        <h1>KELAS XII IPA 1</h1>
+        <p>Bersama, Berprestasi, dan Solid</p>
+    </div>
 
-    <hr>
+    <!-- STRUKTUR KELAS -->
+    <section>
+        <h2 class="title">Struktur Kelas</h2>
 
-    <h2>Wali Kelas</h2>
-    <img src="walikelas.jpg" alt="Wali Kelas" width="150">
-    <p>Nama Wali Kelas</p>
+        <div class="card wali">
+            <img src="walikelas.jpg" alt="">
+            <h3>Wali Kelas</h3>
+            <p>Nama Wali Kelas</p>
+        </div>
 
-    <hr>
+        <div class="row">
 
-    <h2>Ketua Kelas</h2>
-    <img src="ketua.jpg" alt="Ketua Kelas" width="120">
-    <p>Nama Ketua Kelas</p>
+            <div class="card member">
+                <img src="ketua.jpg" alt="">
+                <h3>Ketua Kelas</h3>
+                <p>Nama Ketua</p>
+            </div>
 
-    <h2>Wakil Ketua Kelas</h2>
-    <img src="wakil.jpg" alt="Wakil Ketua Kelas" width="120">
-    <p>Nama Wakil Ketua Kelas</p>
+            <div class="card member">
+                <img src="bendahara1.jpg" alt="">
+                <h3>Bendahara 1</h3>
+                <p>Nama Bendahara</p>
+            </div>
 
-    <h2>Sekretaris 1</h2>
-    <img src="sekre1.jpg" alt="Sekretaris 1" width="120">
-    <p>Nama Sekretaris 1</p>
+            <div class="card member">
+                <img src="bendahara2.jpg" alt="">
+                <h3>Bendahara 2</h3>
+                <p>Nama Bendahara</p>
+            </div>
 
-    <h2>Sekretaris 2</h2>
-    <img src="sekre2.jpg" alt="Sekretaris 2" width="120">
-    <p>Nama Sekretaris 2</p>
+            <div class="card member">
+                <img src="sekre1.jpg" alt="">
+                <h3>Sekretaris 1</h3>
+                <p>Nama Sekretaris</p>
+            </div>
 
-    <h2>Bendahara 1</h2>
-    <img src="bendahara1.jpg" alt="Bendahara 1" width="120">
-    <p>Nama Bendahara 1</p>
+            <div class="card member">
+                <img src="sekre2.jpg" alt="">
+                <h3>Sekretaris 2</h3>
+                <p>Nama Sekretaris</p>
+            </div>
 
-    <h2>Bendahara 2</h2>
-    <img src="bendahara2.jpg" alt="Bendahara 2" width="120">
-    <p>Nama Bendahara 2</p>
+        </div>
+    </section>
 
-    <hr>
+    <!-- FOTO KEGIATAN -->
+    <section>
+        <h2 class="title">Galeri Kegiatan Kelas</h2>
 
-    <h1>📸 Dokumentasi Kegiatan Kelas</h1>
+        <div class="gallery">
+            <img src="kegiatan1.jpg" alt="">
+            <img src="kegiatan2.jpg" alt="">
+            <img src="kegiatan3.jpg" alt="">
+            <img src="kegiatan4.jpg" alt="">
+            <img src="kegiatan5.jpg" alt="">
+            <img src="kegiatan6.jpg" alt="">
+        </div>
+    </section>
 
-    <img src="kegiatan1.jpg" alt="Kegiatan 1" width="250">
-    <img src="kegiatan2.jpg" alt="Kegiatan 2" width="250">
-    <img src="kegiatan3.jpg" alt="Kegiatan 3" width="250">
+    <!-- JADWAL PIKET -->
+    <section>
+        <h2 class="title">Jadwal Piket Kelas</h2>
 
-    <hr>
+        <table>
+            <tr>
+                <th>Hari</th>
+                <th>Anggota</th>
+            </tr>
 
-    <h1>🧹 Jadwal Piket Kelas</h1>
+            <tr>
+                <td>Senin</td>
+                <td>Nama 1, Nama 2, Nama 3</td>
+            </tr>
 
-    <h3>Senin</h3>
-    <ol>
-        <li>Muhammad Ridhlo Maulana Akbar</li>
-        <li>M. Devan Abdika Bangsa</li>
-        <li>Fabrianz Torino Putranzah</li>
-        <li>Ahmad Zidan Alfadly</li>
-        <li>Ascha Bryan Firdaus</li>
-        <li>Ahmad Khubaisy Muhsinin</li>
-        <li>Juan Dzakwan Hisyam</li>
-    </ol>
+            <tr>
+                <td>Selasa</td>
+                <td>Nama 4, Nama 5, Nama 6</td>
+            </tr>
 
-    <h3>Selasa</h3>
-    <ol>
-        <li>Silva Talitha Dzakira</li>
-        <li>Fizza Fahrian Dwidama</li>
-        <li>Muhammad Farid Byantara Kusuma</li>
-        <li>Khalili Azzam Mudji Maulinda</li>
-        <li>Nico Putra Pramana</li>
-        <li>Muhammad Akbar Brilian</li>
-        <li>Ahmad Sony Fahreza</li>
-    </ol>
+            <tr>
+                <td>Rabu</td>
+                <td>Nama 7, Nama 8, Nama 9</td>
+            </tr>
 
-    <h3>Rabu</h3>
-    <ol>
-        <li>Naura Yuwan Ramandhita</li>
-        <li>Nadine Anindya Alfian Putri</li>
-        <li>Amelia Fransiska Dyah C</li>
-        <li>Reyghen Ethan Bradly Simanjuntak</li>
-        <li>Theodorius Adi Fatlolon</li>
-        <li>Calya Aqila Al Mouzavie</li>
-        <li>Muhammad Yafiq Nadim Rafif</li>
-    </ol>
+            <tr>
+                <td>Kamis</td>
+                <td>Nama 10, Nama 11, Nama 12</td>
+            </tr>
 
-    <h3>Kamis</h3>
-    <ol>
-        <li>Ayyub</li>
-        <li>Ajeng Ayu Siswati</li>
-        <li>Dhaniel Wahyu Bahtiar</li>
-        <li>Ken Kanzan Makhfiyan</li>
-        <li>Baskoro Gadang Widhyodono</li>
-        <li>Raditya Satrio Abimanyu</li>
-        <li>Fari Itha As Sarrin</li>
-    </ol>
+            <tr>
+                <td>Jumat</td>
+                <td>Nama 13, Nama 14, Nama 15</td>
+            </tr>
+        </table>
+    </section>
 
-    <h3>Jumat</h3>
-    <ol>
-        <li>Zidni Nuro M</li>
-        <li>Dwi Affandy</li>
-        <li>Lintang Albrian Anwar</li>
-        <li>Zanuar Eka Prasetya</li>
-        <li>Queensha Aurellia</li>
-        <li>Jhon Terry Eka Ramadhani</li>
-    </ol>
+    <footer>
+        © 2026 - Website Resmi Kelas XII IPA 1
+    </footer>
 
 </body>
 </html>
